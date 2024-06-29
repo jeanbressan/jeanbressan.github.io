@@ -3,52 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="images/Jean.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <title>Portfólio Jean Bressan</title>
+    <title>Jean Bressan</title>
 </head>
 <body>
-    <!-- Botões de Navegação -->
-    <div class="edit-conteudos">
-        <div class="img-jean">
-            <img src="" alt="Jean">
-        </div>
-
+    <div class="conteudos">
         <nav>
-            <a href="#sobre-mim" class="conteudos">Sobre Mim</a>
-            <a href="#habilidades" class="conteudos">Habilidades</a>
-            <a href="#meus-projetos" class="conteudos">Meus projetos</a>
-            <a href="#contato" class="conteudos">Contato</a>
+            <a href="#sobre-mim">Sobre mim</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#meus-projetos">Meus Projetos</a>
+            <a href="#contato">Contatos</a>
+            <img src="images/PortJean.JPG" alt="">
         </nav>
     </div>
-    <hr>
-    <div class="tudo-sobre">
-        <h2>
-            Prazer, meu nome é Jean Bressan !
-            <br>
-            Estudante de Engenharia de Software.
-        </h2>
-    </div>
-        <h3>Minhas Habilidades são:</h3>
-        
-    <div class="imgs">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/640px-HTML5_logo_and_wordmark.svg.png" alt="HTML">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png" alt="CSS">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/640px-Python.svg.png" alt="Python">
-    </div>
-    <hr>
-    <footer id="contact">
-        <h2>Contatos</h2>
-        <div class="meus-contatos">
-            <a href="https://github.com/jeanbressan" title="Github" target="_blank">
-                <img src="images/github.svg" alt="Github">
-            </a>
 
-            <a href="https://www.linkedin.com/in/jean-bressan-dos-santos-078853234/" title="Linkedin" target="_blank">
-                <img src="images/linkedin.svg" alt="Linkedin">
-            </a>
+    <div class="descricao" id="sobre-mim">
+        <h1>Sobre mim</h1>
+        <p>
+            <br>Prazer, me chamo Jean e tenho 20 anos. <br>
+            Estou me formando em Engenharia de Software. <br>
+            Sou apaixonado por Tecnologia e trabalho como Suporte para o Governo de Minas Gerais. <br>
+            Atualmente estou em busca da minha primeira vaga como desenvolvedor.
+        </p>
+    </div>
+
+    <div class="habilidade" id="habilidades">
+        <h1>Minhas Habilidades</h1>
+        <div class="img-hab">
+            <img src="images/html.png">
+            <img src="images/js.png">
+            <img src="images/css-3.png">
         </div>
-    </footer>
+    </div>
+
+    <div class="container-project" id="meus-projetos">
+        <!-- Os projetos do Github é para aparecer aqui -->
+    </div>
+       
+    <div class="container" id="contato">
+
+        <!-- Primeiro Card -->
+        <div class="card">
+            <div class="img">
+                <img src="images/github.png">
+            </div>
+            <h1>Github</h1>
+            <div class="content">
+                <p>
+                    Veja mais sobre meus projetos!
+                </p>
+                <a href="https://github.com/jeanbressan" target="_blank">Clique Aqui</a>
+            </div>
+        </div>
+        
+        <!-- Segundo Card -->
+        <div class="card">
+            <div class="img">
+                <img src="images/linkedin.png">
+            </div>
+            <h1>Linkedin</h1>
+            <div class="content">
+                <p>
+                    Veja mais sobre mim!
+                </p>
+                <a href="https://www.linkedin.com/in/jean-bressan-dos-santos-078853234/" target="_blank">Clique Aqui</a>
+            </div>
+        </div>
+        
+        <!-- Terceiro Card -->
+        <div class="card">
+            <div class="img">
+                <img src="images/instagram.png">
+            </div>
+            <h1>Instagram</h1>
+            <div class="content">
+                <p>
+                    Saiba mais sobre meu dia a dia!
+                </p>
+                <a href="https://www.instagram.com/jeean_bn/" target="_blank">Clique Aqui</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="data-site"></div>
 
     <script src="main.js"></script>
 </body>
