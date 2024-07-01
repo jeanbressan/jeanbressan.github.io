@@ -2,39 +2,44 @@ document.addEventListener("DOMContentLoaded", function() {
     const containerProject = document.querySelector('.container-project');
 
     function getApiGitHub() {
-        fetch('https://api.github.com/users/jeanbressan/repos')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Erro ao carregar os projetos do GitHub');
-                }
-                return response.json();
-            })
-            .then(data => {
-                data.forEach(repo => {
-                    const cardProject = document.createElement('div');
-                    cardProject.classList.add('card-project');
+    fetch('https://api.github.com/users/jeanbressan/repos')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erro ao carregar os projetos do GitHub');
+            }
+            return response.json();
+        })
+        .then(data => {
+            data.forEach(repo => {
+                const link = document.createElement('a');
+                link.href = repo.html_url;
+                link.target = '_blank'; // Abre o link em uma nova aba
 
-                    const projectName = document.createElement('h3');
-                    projectName.textContent = repo.name;
+                const cardProject = document.createElement('div');
+                cardProject.classList.add('card-project');
 
-                    const projectDescription = document.createElement('div');
-                    projectDescription.classList.add('content-project');
-                    const description = document.createElement('p');
-                    description.textContent = repo.description || 'Sem descrição disponível';
-                    projectDescription.appendChild(description);
+                const projectName = document.createElement('h3');
+                projectName.textContent = repo.name;
 
-                    cardProject.appendChild(projectName);
-                    cardProject.appendChild(projectDescription);
+                const projectDescription = document.createElement('div');
+                projectDescription.classList.add('content-project');
+                const description = document.createElement('p');
+                description.textContent = repo.description || 'Sem descrição disponível';
+                projectDescription.appendChild(description);
 
-                    containerProject.appendChild(cardProject);
-                });
-            })
-            .catch(error => {
-                console.error('Erro ao buscar os projetos do GitHub:', error);
-                const errorMessage = document.createElement('p');
-                errorMessage.textContent = 'Não foi possível carregar os projetos do GitHub.';
-                containerProject.appendChild(errorMessage);
+                cardProject.appendChild(projectName);
+                cardProject.appendChild(projectDescription);
+
+                link.appendChild(cardProject);
+                containerProject.appendChild(link);
             });
+        })
+        .catch(error => {
+            console.error('Erro ao buscar os projetos do GitHub:', error);
+            const errorMessage = document.createElement('p');
+            errorMessage.textContent = 'Não foi possível carregar os projetos do GitHub.';
+            containerProject.appendChild(errorMessage);
+        });
     }
 
     getApiGitHub();
